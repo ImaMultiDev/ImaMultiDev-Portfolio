@@ -14,6 +14,11 @@ const HeroSection = styled.section`
   padding: 20px;
   margin: 0;
   background-color: ${props => props.theme.colors.background};
+  @media (max-width: 480px) {
+    align-items: start;
+    margin-top: 100px
+
+  }
 `;
 
 const HeroContent = styled.div`
@@ -56,12 +61,25 @@ const SocialContainer = styled(motion.div)`
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: inline-block;
+
+  @media (max-width: 480px) {
+    width: 200px;
+    margin: 0 auto;
+  }
 `;
 
 const SocialLinks = styled.div`
   display: flex;
   gap: 1.5rem;
   justify-content: center;
+
+  @media (max-width: 480px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+  }
 `;
 
 const SocialIcon = styled(motion.a)`
@@ -73,6 +91,14 @@ const SocialIcon = styled(motion.a)`
   
   &:hover {
     color: ${props => props.theme.colors.primary};
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

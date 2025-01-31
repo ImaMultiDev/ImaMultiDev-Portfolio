@@ -28,6 +28,7 @@ const ContentContainer = styled.div`
   @media (max-width: 768px) {
     padding: 0.5rem;
   }
+  
 `;
 
 const BookshelfContainer = styled.div`
@@ -43,23 +44,22 @@ const BooksGrid = styled.div`
   justify-items: center;
   padding: 2rem;
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-
   @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 250px;
+    margin: 0 auto;
   }
 `;
 
 const BookCard = styled(motion.a)`
   width: clamp(120px, 30vw, 159px);
   height: clamp(170px, 42vw, 225px);
-  position: relative;
-
+  
+  @media (max-width: 480px) {
+    width: 159px;
+    height: 225px;
+  }
 `;
 
 const BookCover = styled.img`
