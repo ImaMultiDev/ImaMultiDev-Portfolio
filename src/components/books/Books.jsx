@@ -5,27 +5,28 @@ const BooksSection = styled.section`
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
+
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    height: calc(100vh - 60px);
+    margin-top: 40px;
+  }
 `;
 
 const ContentContainer = styled.div`
   flex: 1;
-  overflow-y: auto;
   padding: 1rem;
   
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  &::-webkit-scrollbar-track {
-    background: ${props => props.theme.colors.background};
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background: ${props => props.theme.colors.primary};
-    border-radius: 4px;
+  @media (max-width: 768px) {
+    padding: 0.5rem;
   }
 `;
 
@@ -33,7 +34,6 @@ const BookshelfContainer = styled.div`
   padding: 1rem;
   background: ${props => props.theme.colors.card};
   border-radius: 8px;
-  margin-top: 1rem;
 `;
 
 const BooksGrid = styled.div`
@@ -42,11 +42,22 @@ const BooksGrid = styled.div`
   gap: 2rem;
   justify-items: center;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 `;
 
 const BookCard = styled(motion.a)`
-  width: 159px;
-  height: 225px;
+  width: clamp(120px, 30vw, 159px);
+  height: clamp(170px, 42vw, 225px);
   position: relative;
 
 `;
@@ -63,7 +74,7 @@ const BookCover = styled.img`
 const BookTitle = styled.h3`
   color: ${props => props.theme.colors.text.primary};
   margin: 0.5rem 0 0;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
   text-align: center;
   cursor: pointer;
 `;

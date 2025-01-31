@@ -9,6 +9,15 @@ const AboutSection = styled.section`
   height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 20px 20px 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    height: calc(100vh - 60px);
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -34,11 +43,22 @@ const ProfileContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
-  margin-top: 2rem;
+
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    font-size: small;
+  }
 `;
 
 const ProfileImageSection = styled(motion.div)`
   position: relative;
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+    margin: 0 auto;
+  }
 `;
 
 const ProfileImageFrame = styled.div`
@@ -71,6 +91,10 @@ const ProfileInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const InfoSection = styled(motion.div)`

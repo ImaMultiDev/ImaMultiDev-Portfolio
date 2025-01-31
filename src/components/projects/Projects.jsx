@@ -9,13 +9,29 @@ const ProjectsSection = styled.section`
   height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
+
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    height: calc(100vh - 60px);
+    margin-top: 40px;
+  }
 `;
 
 const ProjectsContainer = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
-  margin-top: 1rem;
+  margin-top: 10px;
+  
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+
+  }
   
   &::-webkit-scrollbar {
     width: 8px;
@@ -36,6 +52,21 @@ const ProjectsGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   padding: 1rem 0;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const ProjectCard = styled(motion.div)`
@@ -46,70 +77,55 @@ const ProjectCard = styled(motion.div)`
   flex-direction: column;
   gap: 1rem;
   height: 100%;
-  min-height: 200px;
+  min-height: 180px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    min-height: 160px;
+    gap: 0.8rem;
+  }
 `;
 
 const ProjectTitle = styled.h3`
   color: ${props => props.theme.colors.primary};
   margin: 0;
-  font-size: 0.8rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.3;
 `;
 
 const ProjectDescription = styled.p`
   color: ${props => props.theme.colors.text.secondary};
   flex-grow: 1;
   margin: 0;
-  font-size: 0.7rem;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
   line-height: 1.5;
-`;
 
-const ProjectLink = styled.a`
-  color: ${props => props.theme.colors.primary};
-  text-decoration: none;
-  font-size: 0.7rem;
-  padding: 0.5rem 0;
-  display: inline-block;
-  
-  &:hover {
-    text-decoration: underline;
+  @media (max-width: 768px) {
+    line-height: 1.4;
+    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
   }
-`;
-
-const LoadingMessage = styled.div`
-  text-align: center;
-  padding: 2rem;
-  color: ${props => props.theme.colors.text.secondary};
 `;
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const response = await fetch('https://api.github.com/users/kodebidean/repos');
         const data = await response.json();
-        const sortedProjects = data.sort((a, b) => 
-          new Date(b.updated_at) - new Date(a.updated_at)
-        );
-        setProjects(sortedProjects);
+        setProjects(data);
       } catch (error) {
-        console.error('Error fetching projects:', error);
-      } finally {
-        setLoading(false);
+        console.error('Error:', error);
       }
     };
 
     fetchProjects();
   }, []);
-
-  if (loading) {
-    return <LoadingMessage>Cargando proyectos...</LoadingMessage>;
-  }
 
   return (
     <ProjectsSection>
@@ -117,33 +133,20 @@ const Projects = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        style={{ marginBottom: '1rem' }}
       >
         Mis Proyectos
       </motion.h1>
       <ProjectsContainer>
         <ProjectsGrid>
-          {projects.map((project) => (
+          {projects.map(project => (
             <ProjectCard
               key={project.id}
-              whileHover={{ 
-                y: -5, 
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.25)' 
-              }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5 }}
             >
               <ProjectTitle>{project.name}</ProjectTitle>
               <ProjectDescription>
                 {project.description || 'No hay descripción disponible'}
               </ProjectDescription>
-              <ProjectLink 
-                href={project.html_url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Ver en GitHub →
-              </ProjectLink>
             </ProjectCard>
           ))}
         </ProjectsGrid>
@@ -152,4 +155,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;

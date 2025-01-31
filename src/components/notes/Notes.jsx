@@ -8,12 +8,27 @@ const NotesSection = styled.section`
   height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
+
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    height: calc(100vh - 60px);
+    margin-top: 40px;
+  }
 `;
 
 const ContentContainer = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
+  
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
   
   &::-webkit-scrollbar {
     width: 8px;
@@ -34,6 +49,22 @@ const NotesGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   padding: 2rem 0;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const NoteCard = styled(motion.a)`
@@ -50,25 +81,35 @@ const NoteCard = styled(motion.a)`
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-decoration: none;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    min-height: 180px;
+    gap: 0.8rem;
+  }
 `;
 
 const NoteTitle = styled.h3`
   color: ${props => props.theme.colors.primary};
   margin: 0;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
 `;
 
 const NoteDescription = styled.p`
   color: ${props => props.theme.colors.text.secondary};
   flex-grow: 1;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    line-height: 1.4;
+  }
 `;
 
 const NoteDate = styled.span`
   color: ${props => props.theme.colors.text.secondary};
-  font-size: 0.8rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
 `;
 
 const notesData = [

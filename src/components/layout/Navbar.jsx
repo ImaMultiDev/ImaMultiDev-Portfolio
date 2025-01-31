@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Nav = styled.nav`
   position: fixed;
@@ -23,10 +24,78 @@ const NavLinks = styled.div`
   display: flex;
   gap: 2rem;
   align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const MobileMenu = styled(motion.div)`
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: ${props => props.theme.colors.background};
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+const MobileNavLink = styled(Link)`
+  color: ${props => props.theme.colors.text.primary};
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  transition: ${props => props.theme.transition};
+  border-radius: ${props => props.theme.borderRadius};
+
+  &:hover {
+    background: ${props => props.theme.colors.primary}20;
+    color: ${props => props.theme.colors.primary};
+  }
+`;
+
+const MenuButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  color: ${props => props.theme.colors.text.primary};
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: ${props => props.theme.transition};
+
+  &:hover {
+    color: ${props => props.theme.colors.primary};
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+const NavLink = styled(Link)`
+  color: ${props => props.theme.colors.text.primary};
+  text-decoration: none;
+  font-weight: 500;
+  transition: ${props => props.theme.transition};
+
+  &:hover {
+    color: ${props => props.theme.colors.primary};
+  }
 `;
 
 const DropdownContainer = styled.div`
   position: relative;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const DropdownButton = styled.button`
@@ -50,7 +119,7 @@ const DropdownContent = styled(motion.div)`
   position: absolute;
   top: 100%;
   left: 0;
-  background:rgba(13, 17, 23, 0.8);
+  background: rgba(13, 17, 23, 0.8);
   border-radius: ${props => props.theme.borderRadius};
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   min-width: 200px;
@@ -71,53 +140,104 @@ const DropdownLink = styled(Link)`
   }
 `;
 
-const NavLink = styled(Link)`
-  color: ${props => props.theme.colors.text.primary};
-  text-decoration: none;
-  font-weight: 500;
-  transition: ${props => props.theme.transition};
-
-  &:hover {
-    color: ${props => props.theme.colors.primary};
-  }
-`;
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const profileItems = [
+    { path: '/sobre-mi', label: 'Sobre Mí' },
+    { path: '/experiencia', label: 'Experiencia' },
+    { path: '/formacion', label: 'Formación' },
+    { path: '/habilidades', label: 'Habilidades' }
+  ];
+
+  const menuItems = [
+    { path: '/proyectos', label: 'Proyectos' },
+    { path: '/apuntes', label: 'Apuntes' },
+    { path: '/libros', label: 'Libros' },
+    { path: '/noticias', label: 'Noticias' },
+    { path: '/contacto', label: 'Contacto' }
+  ];
+
+  const allMenuItems = [...profileItems, ...menuItems];
 
   return (
     <Nav>
       <NavLink to="/">
-        <motion.span whileHover={{ scale: 1.5 }}>Ima MultiDev
+        <motion.span whileHover={{ scale: 1.1 }}>
+          Ima MultiDev
         </motion.span>
       </NavLink>
+
       <NavLinks>
         <DropdownContainer
-          onMouseEnter={() => setIsOpen(true)}
-          onMouseLeave={() => setIsOpen(false)}
+          onMouseEnter={() => setIsDropdownOpen(true)}
+          onMouseLeave={() => setIsDropdownOpen(false)}
         >
           <DropdownButton>
-            Perfil {isOpen ? '▲' : '▼'}
+            Perfil {isDropdownOpen ? '▲' : '▼'}
           </DropdownButton>
-          {isOpen && (
-            <DropdownContent
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-            >
-              <DropdownLink to="/sobre-mi">Sobre Mí</DropdownLink>
-              <DropdownLink to="/experiencia">Experiencia</DropdownLink>
-              <DropdownLink to="/formacion">Formación</DropdownLink>
-              <DropdownLink to="/habilidades">Habilidades</DropdownLink>
-            </DropdownContent>
-          )}
+          <AnimatePresence>
+            {isDropdownOpen && (
+              <DropdownContent
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+              >
+                {profileItems.map(item => (
+                  <DropdownLink key={item.path} to={item.path}>
+                    {item.label}
+                  </DropdownLink>
+                ))}
+              </DropdownContent>
+            )}
+          </AnimatePresence>
         </DropdownContainer>
-        <NavLink to="/proyectos">Proyectos</NavLink>
-        <NavLink to="/apuntes">Apuntes</NavLink>
-        <NavLink to="/libros">Libros</NavLink>
-        <NavLink to="/noticias">Noticias</NavLink>
-        <NavLink to="/contacto">Contacto</NavLink>
+        
+        {menuItems.map(item => (
+          <NavLink key={item.path} to={item.path}>
+            {item.label}
+          </NavLink>
+        ))}
       </NavLinks>
+
+      <MenuButton onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </MenuButton>
+
+      <AnimatePresence>
+        {isMobile && isOpen && (
+          <MobileMenu
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+          >
+            {allMenuItems.map(item => (
+              <MobileNavLink
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </MobileNavLink>
+            ))}
+          </MobileMenu>
+        )}
+      </AnimatePresence>
     </Nav>
   );
 };

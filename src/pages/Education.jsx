@@ -8,12 +8,26 @@ const EducationSection = styled.section`
   height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 30px 20px 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    height: calc(100vh - 60px);
+  }
 `;
 
 const ContentContainer = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
+  margin-top: 20px;
+  
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
   
   &::-webkit-scrollbar {
     width: 8px;
@@ -45,6 +59,10 @@ const TimelineContainer = styled.div`
     left: 50%;
     margin-left: -3px;
     border-radius: 3px;
+
+    @media (max-width: 768px) {
+      left: 20px;
+    }
   }
 `;
 
@@ -67,6 +85,17 @@ const TimelineItem = styled(motion.div)`
     border-radius: 50%;
     z-index: 1;
   }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 50px);
+    left: 50px;
+    padding: 10px 15px;
+    
+    &::after {
+      left: -37px;
+      right: auto;
+    }
+  }
 `;
 
 const TimelineContent = styled.div`
@@ -76,6 +105,11 @@ const TimelineContent = styled.div`
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 `;
 
 const SchoolLogo = styled.img`

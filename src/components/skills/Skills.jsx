@@ -8,13 +8,27 @@ const SkillsSection = styled.section`
   height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    height: calc(100vh - 60px);
+    margin-top: 40px;
+  }
 `;
 
 const SkillsContainer = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 10px;
+  
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
   
   &::-webkit-scrollbar {
     width: 8px;
