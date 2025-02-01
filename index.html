@@ -13,6 +13,13 @@
   </head>
   <body>
     <div id="root"></div>
+    <div id="root"></div>
+    <!-- Formulario oculto para Netlify -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

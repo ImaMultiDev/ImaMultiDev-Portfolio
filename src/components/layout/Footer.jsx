@@ -75,7 +75,7 @@ const Footer = () => {
           
           <SocialLinks>
             <SocialIcon 
-              href="mailto:imanolmuguetaunsain@gmail.com"
+              href="mailto:contact@imamultidev.dev"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
               target="_blank"
