@@ -21,6 +21,11 @@ const ViewerContainer = styled.div`
   align-items: center;
   padding: 20px;
   overflow: auto;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    min-height: 100vh;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -40,6 +45,12 @@ const StyledDocument = styled(Document)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 100%;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 60px;
+  }
 `;
 
 const StyledPage = styled(Page)`

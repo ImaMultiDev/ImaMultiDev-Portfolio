@@ -5,7 +5,7 @@ const BooksSection = styled.section`
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: calc(100vh - 80px);
+  height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
 
@@ -23,18 +23,32 @@ const BooksSection = styled.section`
 
 const ContentContainer = styled.div`
   flex: 1;
+  overflow-y: auto;
   padding: 1rem;
   
   @media (max-width: 768px) {
     padding: 0.5rem;
   }
   
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: ${props => props.theme.colors.background};
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.colors.primary};
+    border-radius: 4px;
+  }
 `;
 
 const BookshelfContainer = styled.div`
   padding: 1rem;
   background: ${props => props.theme.colors.card};
   border-radius: 8px;
+
 `;
 
 const BooksGrid = styled.div`
@@ -42,7 +56,7 @@ const BooksGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(159px, 1fr));
   gap: 2rem;
   justify-items: center;
-  padding: 2rem;
+  padding: 1rem 0;
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
@@ -52,7 +66,8 @@ const BooksGrid = styled.div`
   }
 `;
 
-const BookCard = styled(motion.a)`
+const BookCard = styled.div`
+  gap: 1rem;
   width: clamp(120px, 30vw, 159px);
   height: clamp(170px, 42vw, 225px);
   
@@ -78,7 +93,6 @@ const BookTitle = styled.h3`
   text-align: center;
   cursor: pointer;
 `;
-
 
 const books = [
   {

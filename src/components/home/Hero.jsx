@@ -16,7 +16,7 @@ const HeroSection = styled.section`
   background-color: ${props => props.theme.colors.background};
   @media (max-width: 480px) {
     align-items: start;
-    margin-top: 100px
+    margin-top: 200px
 
   }
 `;
@@ -75,7 +75,7 @@ const SocialLinks = styled.div`
 
   @media (max-width: 480px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     align-items: center;
     justify-items: center;
