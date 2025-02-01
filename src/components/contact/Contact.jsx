@@ -47,7 +47,7 @@ const SuccessMessage = styled(motion.div)`
   background: ${props => props.theme.colors.card};
   padding: 1rem;
   border-radius: ${props => props.theme.borderRadius};
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
 `;
 
@@ -56,7 +56,7 @@ const ErrorMessage = styled(motion.div)`
   background: ${props => props.theme.colors.card};
   padding: 1rem;
   border-radius: ${props => props.theme.borderRadius};
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
 `;
 
