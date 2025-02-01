@@ -12,7 +12,7 @@ const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 `;
 
 const Input = styled.input`
