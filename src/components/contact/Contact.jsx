@@ -6,6 +6,15 @@ const ContactSection = styled.section`
   padding: 100px 20px 20px;
   max-width: 800px;
   margin: 0 auto;
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    height: calc(100vh - 60px);
+  }
 `;
 
 const ContactForm = styled.form`
