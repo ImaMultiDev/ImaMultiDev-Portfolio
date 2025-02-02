@@ -11,7 +11,6 @@ export default defineConfig({
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'animation-vendor': ['framer-motion', '@emotion/react', '@emotion/styled'],
           'icons-vendor': ['react-icons'],
-          'particles-vendor': ['@tsparticles/react', '@tsparticles/slim']
         }
       }
     },

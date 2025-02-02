@@ -5,7 +5,6 @@ import { GlobalStyles } from '../../styles/GlobalStyles';
 import PropTypes from 'prop-types';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import ParticlesBackground from '../common/ParticlesBackground';
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -33,7 +32,6 @@ const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
     <LayoutContainer>
-      <ParticlesBackground />
       <Navbar />
       <MainContent>
         {children}
