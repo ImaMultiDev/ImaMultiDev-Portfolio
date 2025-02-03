@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import ParticlesBackground from '../common/ParticlesBackground';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 const HeroSection = styled.section`
@@ -105,7 +104,6 @@ const SocialIcon = styled(motion.a)`
 const Hero = () => {
   return (
     <HeroSection>
-      <ParticlesBackground />
       <HeroContent>
         <Name
           initial={{ opacity: 0, y: 20 }}
