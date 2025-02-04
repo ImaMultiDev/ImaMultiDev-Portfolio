@@ -1,0 +1,10 @@
+# Forzar dominio principal
+/*    https://imamultidev.dev/:splat    301!
+
+# Redirecciones permanentes
+/blog              /noticias              301
+/about             /sobre-mi              301
+/skills            /habilidades           301
+
+# Error 404 personalizado
+/*                 /index.html            200

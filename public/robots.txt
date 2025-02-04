@@ -1,0 +1,25 @@
+# www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://imamultidev.dev/sitemap.xml
+
+# Directorios y archivos a no indexar
+Disallow: /private/
+Disallow: /admin/
+Disallow: /*.pdf$
+Disallow: /*?*
+
+# Permitir recursos estáticos
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+
+# Crawl-delay
+Crawl-delay: 10

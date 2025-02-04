@@ -1,0 +1,11 @@
+/* TEAM */
+Developer: Imanol Mugueta
+Site: https://imamultidev.dev
+Twitter: @KodeBidean
+Location: Navarra, España
+
+/* SITE */
+Last update: 2024/02/03
+Standards: HTML5, CSS3, JavaScript
+Components: React, Vite, Emotion, Framer Motion
+Software: VS Code, Git 
