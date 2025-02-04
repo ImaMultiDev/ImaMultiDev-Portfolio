@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
 const ContactSection = styled.section`
-  padding: 100px 20px 20px;
+  padding: 20px;
   max-width: 800px;
   margin: 0 auto;
   h1 {
@@ -54,7 +54,6 @@ const Button = styled(motion.button)`
 const SuccessMessage = styled(motion.div)`
   color: #4caf50;
   background: ${props => props.theme.colors.card};
-  padding: 1rem;
   border-radius: ${props => props.theme.borderRadius};
   margin-bottom: 1rem;
   text-align: center;
@@ -63,9 +62,9 @@ const SuccessMessage = styled(motion.div)`
 const ErrorMessage = styled(motion.div)`
   color: #f44336;
   background: ${props => props.theme.colors.card};
-  padding: 1rem;
   border-radius: ${props => props.theme.borderRadius};
   margin-bottom: 1rem;
+  
   text-align: center;
 `;
 
