@@ -18,7 +18,13 @@ const AboutSection = styled.section`
     padding: 15px;
     height: calc(100vh - 60px);
   }
+  h3 {
+    color: ${props => props.theme.colors.primary};
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
 `;
+
 
 const ContentContainer = styled.div`
   flex: 1;
@@ -130,6 +136,7 @@ const InterestsContainer = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
+
 `;
 
 const InterestTag = styled(motion.span)`
@@ -209,6 +216,7 @@ const About = () => {
 
               <h3>Intereses</h3>
               <InterestsContainer>
+                
                 {interests.map((interest, index) => (
                   <InterestTag
                     key={interest}
