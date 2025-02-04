@@ -7,12 +7,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://imamultidev.dev/proyectos</loc>
-    <lastmod>2024-02-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://imamultidev.dev/sobre-mi</loc>
     <lastmod>2024-02-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -32,6 +26,24 @@
   </url>
   <url>
     <loc>https://imamultidev.dev/habilidades</loc>
+    <lastmod>2024-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imamultidev.dev/proyectos</loc>
+    <lastmod>2024-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://imamultidev.dev/apuntes</loc>
+    <lastmod>2024-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imamultidev.dev/libros</loc>
     <lastmod>2024-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
