@@ -118,42 +118,49 @@ const notesData = [
     title: "Guía Spring Boot y PostgreSQL",
     description: "Una guía completa para crear una API RESTful profesional utilizando Spring Boot y PostgreSQL. Incluye buenas prácticas, seguridad y documentación.",
     link: "https://iron-pencil-c48.notion.site/Gu-a-Completa-para-Crear-una-API-RESTful-Profesional-con-Spring-Boot-y-PostgreSQL-17097500a8be804a96eef8c655e84e2d",
-    date: "Marzo 2024"
+    date: "Enero 2025"
   },
   {
     id: 2,
     title: "Retrofit, Glide y SwipeRefreshLayout",
     description: "Guía completa sobre cómo implementar Retrofit para APIs, Glide para gestión de imágenes y SwipeRefreshLayout para actualización de contenido en Android.",
     link: "https://iron-pencil-c48.notion.site/GUIA-RetroFit-GLIDE-SwipeRefreshLayout-14c97500a8be80b5a800c6fee2ee31fc",
-    date: "Marzo 2024"
+    date: "Diciembre 2024"
   },
   {
     id: 3,
     title: "Plantillas Android",
     description: "Colección de plantillas y estructuras base para el desarrollo de aplicaciones Android. Incluye ejemplos de layouts y componentes comunes.",
     link: "https://iron-pencil-c48.notion.site/Plantillas-Android-15c97500a8be8090a4ebf4a365564c36",
-    date: "Marzo 2024"
+    date: "Diciembre 2024"
   },
   {
     id: 4,
     title: "Dependencias y Plugins Android",
     description: "Lista completa de dependencias y plugins esenciales para el desarrollo Android. Incluye configuraciones y casos de uso.",
     link: "https://iron-pencil-c48.notion.site/DEPENDENCIAS-Y-PLUGINS-15097500a8be80129e92f52ce950da02",
-    date: "Marzo 2024"
+    date: "Enero 2025"
   },
   {
     id: 5,
     title: "Listado de Permisos Android",
     description: "Guía detallada sobre los permisos en Android, cuándo y cómo implementarlos correctamente en tus aplicaciones.",
     link: "https://iron-pencil-c48.notion.site/LISTADO-PERMISOS-16497500a8be80248999dde808f6f8d3",
-    date: "Marzo 2024"
+    date: "Enero 2025"
   },
   {
     id: 6,
     title: "Gestión de Datos en Android",
     description: "Aprende sobre diferentes métodos de almacenamiento y gestión de datos en Android, incluyendo SQLite, Room y preferencias compartidas.",
     link: "https://iron-pencil-c48.notion.site/Unidad-3-GESTI-N-DE-DATOS-10c97500a8be80dc9f14c807dd3244a9",
-    date: "Marzo 2024"
+    date: "Diciembre 2024"
+  },
+  {
+    id: 7,
+    title: "Guía de Despliegue en Railway con PostgreSQL (uso de Cloudinary)",
+    description: "Guia de Spring Boot para desplegar una aplicación en Railway con PostgreSQL y uso de Cloudinary para gestión de imágenes",
+    link: "https://iron-pencil-c48.notion.site/Gu-a-de-Despliegue-en-Railway-con-PostgreSQL-uso-de-Cloudinary-19897500a8be801a9421c1d799eb8c78",
+    date: "Febrero 2025"
   }
 ];
 

@@ -82,6 +82,12 @@ const ProjectCard = styled(motion.div)`
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  }
 
   @media (max-width: 768px) {
     padding: 1rem;
@@ -127,6 +133,10 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
+  const handleProjectClick = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <ProjectsSection>
       <motion.h1
@@ -142,6 +152,7 @@ const Projects = () => {
             <ProjectCard
               key={project.id}
               whileHover={{ y: -5 }}
+              onClick={() => handleProjectClick(project.html_url)}
             >
               <ProjectTitle>{project.name}</ProjectTitle>
               <ProjectDescription>
