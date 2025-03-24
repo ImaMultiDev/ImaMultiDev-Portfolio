@@ -239,7 +239,7 @@ const About = () => {
                   <FaEnvelope />
                 </SocialIcon>
                 <SocialIcon 
-                  href="https://github.com/kodebidean"
+                  href="https://github.com/ImaMultiDev"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -3 }}
