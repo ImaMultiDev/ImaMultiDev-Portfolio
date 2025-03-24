@@ -157,7 +157,7 @@ const notesData = [
   },
   {
     id: 7,
-    title: "MVVM App → Firebase, Room, Dagger Hilt, Retrofit",
+    title: "MVVM Android Kotlin → Firebase, Room, Dagger Hilt, Retrofit",
     description: "Guia de Proyecto de desarrollo Android con Arquitectura MVVM, implementando Firebase Auth, Room, Dagger Hilt y Retrofit.",
     link: "https://iron-pencil-c48.notion.site/MVVM-App-Firebase-Room-Dagger-Hilt-Retrofit-1a297500a8be80ff8d35d5280909a6c2",
     date: "Marzo 2025"
@@ -168,6 +168,13 @@ const notesData = [
     description: "Guia de Spring Boot para desplegar una aplicación en Railway con PostgreSQL y uso de Cloudinary para gestión de imágenes",
     link: "https://iron-pencil-c48.notion.site/Gu-a-de-Despliegue-en-Railway-con-PostgreSQL-uso-de-Cloudinary-19897500a8be801a9421c1d799eb8c78",
     date: "Febrero 2025"
+  },
+  {
+    id: 9,
+    title: "MVVM iOS Swift → Firebase, CoreData, Alamofire, URLSession, Codable",
+    description: "Guía de proyecto de desarrollo iOS con Arquitectura MVVM, implementando Firebase, CoreData, Alamofire, URLSession, Codable",
+    link: "https://iron-pencil-c48.notion.site/mvvm-moviesapi-swift",
+    date: "Marzo 2025"
   }
 ];
 

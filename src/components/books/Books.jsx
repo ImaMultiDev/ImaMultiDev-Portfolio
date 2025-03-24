@@ -113,7 +113,14 @@ const books = [
     title: "Android Development",
     coverImage: "/images/books/android_development.png",
     pdfUrl: "https://www.canva.com/design/DAGc0NasHXY/vSZheSE2AKU-TvxuhebT8g/edit?utm_content=DAGc0NasHXY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+  },
+  {
+    id: 4,
+    title: "JIMNY.AI Project",
+    coverImage: "/images/books/jimnyai_project.png",
+    pdfUrl: "https://jimnyai.my.canva.site/jimny-ai"
   }
+  //
 ];
 
 const Books = () => {
@@ -128,7 +135,7 @@ const Books = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Libros en Desarrollo
+        Libros y Documentación
       </motion.h1>
       <ContentContainer>
         <BookshelfContainer>

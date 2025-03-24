@@ -122,7 +122,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/kodebidean/repos');
+        const response = await fetch('https://api.github.com/users/ImaMultiDev/repos');
         const data = await response.json();
         setProjects(data);
       } catch (error) {
