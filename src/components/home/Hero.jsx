@@ -142,7 +142,7 @@ const Hero = () => {
               <FaEnvelope />
             </SocialIcon>
             <SocialIcon 
-              href="https://github.com/kodebidean"
+              href="https://github.com/ImaMultidev"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -3 }}
