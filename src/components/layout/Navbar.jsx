@@ -165,6 +165,7 @@ const Navbar = () => {
   ];
 
   const menuItems = [
+    { path: '/despliegues', label: 'Despliegues' },
     { path: '/proyectos', label: 'Proyectos' },
     { path: '/apuntes', label: 'Apuntes' },
     { path: '/libros', label: 'Libros' },
@@ -242,4 +243,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

@@ -11,6 +11,7 @@ const About = lazy(() => import('./pages/About'));
 const Experience = lazy(() => import('./pages/Experience'));
 const Education = lazy(() => import('./pages/Education'));
 const Projects = lazy(() => import('./components/projects/Projects'));
+const Deployments = lazy(() => import('./components/deployments/Deployments'));
 const Books = lazy(() => import('./components/books/Books'));
 const Notes = lazy(() => import('./components/notes/Notes'));
 const Contact = lazy(() => import('./components/contact/Contact'));
@@ -26,6 +27,7 @@ function App() {
             <Route path="/experiencia" element={<Experience />} />
             <Route path="/formacion" element={<Education />} />
             <Route path="/habilidades" element={<Skills />} />
+            <Route path="/despliegues" element={<Deployments />} />
             <Route path="/proyectos" element={<Projects />} />
             <Route path="/apuntes" element={<Notes />} />
             <Route path="/libros" element={<Books />} />
