@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
 const DeploymentsSection = styled.section`
   padding: 20px;
@@ -26,22 +26,22 @@ const DeploymentsContainer = styled.div`
   overflow-y: auto;
   padding: 1rem;
   margin-top: 1rem;
-  
+
   @media (max-width: 768px) {
     padding: 0.5rem;
     margin-top: 0.5rem;
   }
-  
+
   &::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   &::-webkit-scrollbar-track {
-    background: ${props => props.theme.colors.background};
+    background: ${(props) => props.theme.colors.background};
   }
-  
+
   &::-webkit-scrollbar-thumb {
-    background: ${props => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors.primary};
     border-radius: 4px;
   }
 `;
@@ -69,8 +69,8 @@ const DeploymentsGrid = styled.div`
 `;
 
 const DeploymentCard = styled(motion.article)`
-  background: ${props => props.theme.colors.card};
-  border-radius: ${props => props.theme.borderRadius};
+  background: ${(props) => props.theme.colors.card};
+  border-radius: ${(props) => props.theme.borderRadius};
   padding: 0.5rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -106,14 +106,14 @@ const DeploymentContent = styled.div`
 `;
 
 const DeploymentTitle = styled.h3`
-  color: ${props => props.theme.colors.text.primary};
+  color: ${(props) => props.theme.colors.text.primary};
   margin: 0 0 1rem;
   font-size: clamp(1rem, 3vw, 1.2rem);
   line-height: 1.4;
 `;
 
 const DeploymentDescription = styled.p`
-  color: ${props => props.theme.colors.text.secondary};
+  color: ${(props) => props.theme.colors.text.secondary};
   font-size: clamp(0.8rem, 2vw, 0.9rem);
   line-height: 1.6;
   margin: 0;
@@ -130,11 +130,11 @@ const DeploymentFooter = styled.div`
   align-items: center;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid ${props => props.theme.colors.border};
+  border-top: 1px solid ${(props) => props.theme.colors.border};
 `;
 
 const DeploymentDate = styled.span`
-  color: ${props => props.theme.colors.text.secondary};
+  color: ${(props) => props.theme.colors.text.secondary};
   font-size: clamp(0.7rem, 1.5vw, 0.8rem);
 `;
 
@@ -145,16 +145,17 @@ const deploymentsData = [
     description: "Juega ahora a REAL o IA Game",
     image: "/images/webs/realoia.png",
     url: "https://realoia.netlify.app/",
-    date: "2024-02-03"
+    date: "2024-02-03",
   },
 
   {
     id: 2,
     title: "Gallery API REST",
-    description: "Consumir una API REST de galería de imágenes y subir tus imágenes",
+    description:
+      "Consumir una API REST de galería de imágenes y subir tus imágenes",
     image: "/images/webs/galleryapirest.png",
     url: "https://galleryapirest.netlify.app/",
-    date: "2024-02-03"
+    date: "2024-02-03",
   },
   {
     id: 3,
@@ -162,11 +163,16 @@ const deploymentsData = [
     description: "API REST de galería de imágenes del juego Real o IA",
     image: "/images/webs/realoiaapigallery.png",
     url: "https://real-o-ia-api-gallery.netlify.app/",
-    date: "2024-02-03"
+    date: "2024-02-03",
   },
-
-
-  
+  {
+    id: 4,
+    title: "JIMNY.AI Landing Page",
+    description: "Landing Page del proyecto JIMNY.AI",
+    image: "/images/webs/jimny-lp.png",
+    url: "https://jimny.netlify.app/",
+    date: "2025-05-11",
+  },
 ];
 
 const Deployments = () => {
@@ -184,15 +190,12 @@ const Deployments = () => {
           {deploymentsData.map((deployment) => (
             <DeploymentCard
               key={deployment.id}
-              onClick={() => window.open(deployment.url, '_blank')}
+              onClick={() => window.open(deployment.url, "_blank")}
               whileHover={{ y: -5 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <DeploymentImage 
-                src={deployment.image}
-                alt={deployment.title}
-              />
+              <DeploymentImage src={deployment.image} alt={deployment.title} />
               <DeploymentContent>
                 <DeploymentTitle>{deployment.title}</DeploymentTitle>
                 <DeploymentDescription>
@@ -200,7 +203,7 @@ const Deployments = () => {
                 </DeploymentDescription>
                 <DeploymentFooter>
                   <DeploymentDate>
-                    {new Date(deployment.date).toLocaleDateString('es-ES')}
+                    {new Date(deployment.date).toLocaleDateString("es-ES")}
                   </DeploymentDate>
                 </DeploymentFooter>
               </DeploymentContent>
