@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
 const ExperienceSection = styled.section`
   padding: 20px;
@@ -23,17 +23,17 @@ const ContentContainer = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
-  
+
   &::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   &::-webkit-scrollbar-track {
-    background: ${props => props.theme.colors.background};
+    background: ${(props) => props.theme.colors.background};
   }
-  
+
   &::-webkit-scrollbar-thumb {
-    background: ${props => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors.primary};
     border-radius: 4px;
   }
 `;
@@ -45,10 +45,10 @@ const TimelineContainer = styled.div`
   padding: 20px;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 6px;
-    background: ${props => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors.primary};
     top: 0;
     bottom: 0;
     left: 50%;
@@ -67,17 +67,17 @@ const TimelineItem = styled(motion.div)`
   padding: 10px 40px;
   position: relative;
   width: 50%;
-  left: ${props => props.position === 'left' ? '0' : '50%'};
+  left: ${(props) => (props.position === "left" ? "0" : "50%")};
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 25px;
     height: 25px;
-    right: ${props => props.position === 'left' ? '-17px' : 'auto'};
-    left: ${props => props.position === 'left' ? 'auto' : '-17px'};
-    background: ${props => props.theme.colors.primary};
-    border: 4px solid ${props => props.theme.colors.background};
+    right: ${(props) => (props.position === "left" ? "-17px" : "auto")};
+    left: ${(props) => (props.position === "left" ? "auto" : "-17px")};
+    background: ${(props) => props.theme.colors.primary};
+    border: 4px solid ${(props) => props.theme.colors.background};
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -87,7 +87,7 @@ const TimelineItem = styled(motion.div)`
     width: calc(100% - 50px);
     left: 50px;
     padding: 10px 15px;
-    
+
     &::after {
       left: -37px;
       right: auto;
@@ -97,8 +97,8 @@ const TimelineItem = styled(motion.div)`
 
 const TimelineContent = styled.div`
   padding: 20px;
-  background: ${props => props.theme.colors.card};
-  border-radius: ${props => props.theme.borderRadius};
+  background: ${(props) => props.theme.colors.card};
+  border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -118,31 +118,31 @@ const CompanyLogo = styled.img`
 `;
 
 const JobTitle = styled.h3`
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   margin: 0 0 0.5rem;
   font-size: 1.2rem;
 `;
 
 const CompanyName = styled.h4`
-  color: ${props => props.theme.colors.text.primary};
+  color: ${(props) => props.theme.colors.text.primary};
   margin: 0 0 0.5rem;
   font-size: 1rem;
 `;
 
 const JobDetails = styled.p`
-  color: ${props => props.theme.colors.text.secondary};
+  color: ${(props) => props.theme.colors.text.secondary};
   margin: 0;
   font-size: 0.9rem;
 `;
 
 const Period = styled.span`
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   font-weight: 500;
 `;
 
 const SpecializationSection = styled.div`
-  background: ${props => props.theme.colors.card};
-  border-radius: ${props => props.theme.borderRadius};
+  background: ${(props) => props.theme.colors.card};
+  border-radius: ${(props) => props.theme.borderRadius};
   padding: 2rem;
   margin-top: 3rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -158,8 +158,8 @@ const SpecializationGrid = styled.div`
 
 const SpecializationItem = styled(motion.div)`
   padding: 1rem;
-  background: ${props => props.theme.colors.background};
-  border-radius: ${props => props.theme.borderRadius};
+  background: ${(props) => props.theme.colors.background};
+  border-radius: ${(props) => props.theme.borderRadius};
   text-align: center;
 `;
 
@@ -173,15 +173,14 @@ const CVContainer = styled.div`
 const CVButton = styled(motion.a)`
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   color: white;
   text-decoration: none;
-  border-radius: ${props => props.theme.borderRadius};
+  border-radius: ${(props) => props.theme.borderRadius};
   font-weight: 500;
   text-align: center;
   margin: 2rem;
-  
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -191,42 +190,51 @@ const CVButton = styled(motion.a)`
 const experienceData = [
   {
     id: 1,
+    title: "FullStack Junnior Developer",
+    company: "SYNKROSS",
+    location: "Madrid (Madrid)",
+    period: "2025",
+    type: "Prácticas FPS DAMD, Jornada Completa, A distancia",
+    logo: "/images/logos/synkross.webp",
+  },
+  {
+    id: 2,
     title: "Gestor ERP SAP",
     company: "ERRIBERRI SL",
     location: "Olite (Navarra)",
     period: "2024",
     type: "Contrato Temporal, Jornada Completa",
-    logo: "/images/logos/erriberri.png"
+    logo: "/images/logos/erriberri.png",
   },
   {
-    id: 2,
+    id: 3,
     title: "Programador CNC y Control de Procesos",
     company: "GKN AUTOMOTIVE",
     location: "Carcastillo (Navarra)",
     period: "2018–2023",
     type: "Contrato Indefinido, Jornada Completa",
-    logo: "/images/logos/gkn.png"
+    logo: "/images/logos/gkn.png",
   },
   {
-    id: 3,
+    id: 4,
     title: "Marketing Digital y Gestión Comercial",
     company: "SUPERRECAMBIOS.COM",
     location: "Pamplona (Navarra)",
     period: "2016–2017",
     type: "Contrato Temporal, Jornada Completa",
-    logo: "/images/logos/superrecambios.png"
-  }
+    logo: "/images/logos/superrecambios.png",
+  },
 ];
 
 const specializations = [
-  "Desarrollo Web", 
-  "Desarrollo Android", 
+  "Desarrollo Web",
+  "Desarrollo Android",
   "Desarrollo iOS",
   "Marketing Digital",
   "Inteligencia Artificial",
   "Machine Learning",
   "Programación CNC",
-  "Sistemas ERP"
+  "Sistemas ERP",
 ];
 
 const Experience = () => {
@@ -239,13 +247,13 @@ const Experience = () => {
       >
         Experiencia Profesional
       </motion.h1>
-      
+
       <ContentContainer>
         <TimelineContainer>
           {experienceData.map((job, index) => (
             <TimelineItem
               key={job.id}
-              position={index % 2 === 0 ? 'left' : 'right'}
+              position={index % 2 === 0 ? "left" : "right"}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -294,10 +302,9 @@ const Experience = () => {
             Ver CV
           </CVButton>
         </CVContainer>
-
       </ContentContainer>
     </ExperienceSection>
   );
 };
 
-export default Experience; 
+export default Experience;
