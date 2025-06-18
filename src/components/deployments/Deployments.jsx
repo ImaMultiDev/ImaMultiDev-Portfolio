@@ -166,11 +166,12 @@ const deploymentsData = [
   },
   {
     id: 4,
-    title: "JIMNY.AI Landing Page",
-    description: "Landing Page del proyecto JIMNY.AI",
-    image: "/images/webs/jimny-lp.png",
-    url: "https://jimny.netlify.app/",
-    date: "2025-05-11",
+    title: "GSAP Multidev",
+    description:
+      "Aprende GSAP Visualmente. La plataforma definitiva para dominar las animaciones web",
+    image: "/images/webs/gsap-multidev.png",
+    url: "https://gsapmultidev.netlify.app/",
+    date: "2025-06-18",
   },
   {
     id: 5,
@@ -180,6 +181,14 @@ const deploymentsData = [
     image: "/images/webs/multidevstation.png",
     url: "https://multidevstation.netlify.app/",
     date: "2025-06-10",
+  },
+  {
+    id: 6,
+    title: "JIMNY.AI Landing Page",
+    description: "Landing Page del proyecto JIMNY.AI",
+    image: "/images/webs/jimny-lp.png",
+    url: "https://jimny.netlify.app/",
+    date: "2025-05-11",
   },
 ];
 
