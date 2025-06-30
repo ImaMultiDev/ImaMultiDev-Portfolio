@@ -141,6 +141,31 @@ const DeploymentDate = styled.span`
 const deploymentsData = [
   {
     id: 1,
+    title: "CVitaPilot",
+    description: "Aplicación para gestión de CVitas en desarrollo",
+    image: "/images/webs/cvitapilotcharacter.png",
+    url: "https://www.cvitapilot.com/",
+    date: "2025-05-11",
+  },
+  {
+    id: 2,
+    title: "GSAP Motion",
+    description:
+      "Aprende GSAP Visualmente. La plataforma definitiva para dominar las animaciones web (Aplicación en desarrollo)",
+    image: "/images/webs/gsap-multidev.png",
+    url: "https://gsapmotion.netlify.app/",
+    date: "2025-06-18",
+  },
+  {
+    id: 3,
+    title: "Spin & Sell",
+    description:
+      "E-Commerce de compras y ventas de diferentes categorias de bicicletas y patinetes electricos",
+    image: "/images/webs/spinandselllogonobg.png",
+    url: "https://spinandsell.vercel.app/",
+  },
+  {
+    id: 4,
     title: "REAL o IA Game",
     description: "Juega ahora a REAL o IA Game",
     image: "/images/webs/realoia.png",
@@ -148,7 +173,7 @@ const deploymentsData = [
     date: "2024-02-03",
   },
   {
-    id: 2,
+    id: 5,
     title: "Real o IA API Gallery",
     description: "API REST de galería de imágenes del juego Real o IA",
     image: "/images/webs/realoiaapigallery.png",
@@ -156,39 +181,22 @@ const deploymentsData = [
     date: "2024-02-05",
   },
   {
-    id: 3,
+    id: 6,
+    title: "Multidev Station",
+    description:
+      "Estación multidesarrollo para la documentación de proyectos, frameworks, herramientas,... (Aplicación en desarrollo)",
+    image: "/images/webs/multidevstation.png",
+    url: "https://multidevstation.netlify.app/",
+    date: "2025-06-10",
+  },
+  {
+    id: 7,
     title: "Gallery API REST",
     description:
       "Consumir una API REST de galería de imágenes y subir tus imágenes",
     image: "/images/webs/galleryapirest.png",
     url: "https://galleryapirest.netlify.app/",
     date: "2024-03-05",
-  },
-  {
-    id: 4,
-    title: "GSAP Multidev",
-    description:
-      "Aprende GSAP Visualmente. La plataforma definitiva para dominar las animaciones web",
-    image: "/images/webs/gsap-multidev.png",
-    url: "https://gsapmultidev.netlify.app/",
-    date: "2025-06-18",
-  },
-  {
-    id: 5,
-    title: "Multidev Station",
-    description:
-      "Estación multidesarrollo para la documentación de proyectos, frameworks, herramientas,...",
-    image: "/images/webs/multidevstation.png",
-    url: "https://multidevstation.netlify.app/",
-    date: "2025-06-10",
-  },
-  {
-    id: 6,
-    title: "JIMNY.AI Landing Page",
-    description: "Landing Page del proyecto JIMNY.AI",
-    image: "/images/webs/jimny-lp.png",
-    url: "https://jimny.netlify.app/",
-    date: "2025-05-11",
   },
 ];
 
