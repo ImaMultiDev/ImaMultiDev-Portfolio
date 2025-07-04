@@ -145,7 +145,7 @@ const deploymentsData = [
     description: "Aplicación para gestión de CVitas en desarrollo",
     image: "/images/webs/cvitapilotcharacter.png",
     url: "https://www.cvitapilot.com/",
-    date: "2025-05-11",
+    date: "2025-06-15",
   },
   {
     id: 2,
@@ -154,7 +154,7 @@ const deploymentsData = [
       "Aprende GSAP Visualmente. La plataforma definitiva para dominar las animaciones web (Aplicación en desarrollo)",
     image: "/images/webs/gsap-multidev.png",
     url: "https://gsapmotion.netlify.app/",
-    date: "2025-06-18",
+    date: "2025-05-11",
   },
   {
     id: 3,
@@ -163,6 +163,7 @@ const deploymentsData = [
       "E-Commerce de compras y ventas de diferentes categorias de bicicletas y patinetes electricos",
     image: "/images/webs/spinandselllogonobg.png",
     url: "https://spinandsell.vercel.app/",
+    date: "2025-07-01",
   },
   {
     id: 4,
@@ -170,7 +171,7 @@ const deploymentsData = [
     description: "Juega ahora a REAL o IA Game",
     image: "/images/webs/realoia.png",
     url: "https://realoia.netlify.app/",
-    date: "2024-02-03",
+    date: "2024-02-15",
   },
   {
     id: 5,
@@ -178,7 +179,7 @@ const deploymentsData = [
     description: "API REST de galería de imágenes del juego Real o IA",
     image: "/images/webs/realoiaapigallery.png",
     url: "https://real-o-ia-api-gallery.netlify.app/",
-    date: "2024-02-05",
+    date: "2024-02-03",
   },
   {
     id: 6,
@@ -191,12 +192,21 @@ const deploymentsData = [
   },
   {
     id: 7,
+    title: "Landing Page Jimny.AI",
+    description:
+      "Landing Page de Jimny.AI, proyecto finalista del primer concurso de emprendimiento e innovación digital de U-tad",
+    image: "/images/webs/jimny-lp.png",
+    url: "https://jimny.netlify.app/",
+    date: "2024-03-05",
+  },
+  {
+    id: 8,
     title: "Gallery API REST",
     description:
       "Consumir una API REST de galería de imágenes y subir tus imágenes",
     image: "/images/webs/galleryapirest.png",
     url: "https://galleryapirest.netlify.app/",
-    date: "2024-03-05",
+    date: "2024-02-01",
   },
 ];
 
