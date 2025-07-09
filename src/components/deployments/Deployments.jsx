@@ -149,12 +149,12 @@ const deploymentsData = [
   },
   {
     id: 2,
-    title: "GSAP Motion",
+    title: "SVGStorm",
     description:
-      "Aprende GSAP Visualmente. La plataforma definitiva para dominar las animaciones web (Aplicación en desarrollo)",
-    image: "/images/webs/gsap-multidev.png",
-    url: "https://gsapmotion.netlify.app/",
-    date: "2025-05-11",
+      "SVGStorm es un ecosistema completo para gestionar y consumir iconos SVG de forma profesional.",
+    image: "/images/webs/svgstorm.png",
+    url: "https://svgstorm-web-catalog.vercel.app/",
+    date: "2025-07-07",
   },
   {
     id: 3,
@@ -167,6 +167,15 @@ const deploymentsData = [
   },
   {
     id: 4,
+    title: "GSAP Motion",
+    description:
+      "Aprende GSAP Visualmente. La plataforma definitiva para dominar las animaciones web (Aplicación en desarrollo)",
+    image: "/images/webs/gsap-multidev.png",
+    url: "https://gsapmotion.netlify.app/",
+    date: "2025-05-11",
+  },
+  {
+    id: 5,
     title: "REAL o IA Game",
     description: "Juega ahora a REAL o IA Game",
     image: "/images/webs/realoia.png",
@@ -174,7 +183,7 @@ const deploymentsData = [
     date: "2024-02-15",
   },
   {
-    id: 5,
+    id: 6,
     title: "Real o IA API Gallery",
     description: "API REST de galería de imágenes del juego Real o IA",
     image: "/images/webs/realoiaapigallery.png",
@@ -182,7 +191,7 @@ const deploymentsData = [
     date: "2024-02-03",
   },
   {
-    id: 6,
+    id: 7,
     title: "Multidev Station",
     description:
       "Estación multidesarrollo para la documentación de proyectos, frameworks, herramientas,... (Aplicación en desarrollo)",
@@ -191,7 +200,7 @@ const deploymentsData = [
     date: "2025-06-10",
   },
   {
-    id: 7,
+    id: 8,
     title: "Landing Page Jimny.AI",
     description:
       "Landing Page de Jimny.AI, proyecto finalista del primer concurso de emprendimiento e innovación digital de U-tad",
@@ -200,7 +209,7 @@ const deploymentsData = [
     date: "2024-03-05",
   },
   {
-    id: 8,
+    id: 9,
     title: "Gallery API REST",
     description:
       "Consumir una API REST de galería de imágenes y subir tus imágenes",
