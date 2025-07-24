@@ -138,6 +138,16 @@ const DeploymentDate = styled.span`
   font-size: clamp(0.7rem, 1.5vw, 0.8rem);
 `;
 
+const WarningMessage = styled.div`
+  color: #ff4444;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  padding: 0.3rem;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 4px;
+  text-align: center;
+`;
+
 const deploymentsData = [
   {
     id: 1,
@@ -181,6 +191,7 @@ const deploymentsData = [
     image: "/images/webs/realoia.png",
     url: "https://realoia.netlify.app/",
     date: "2024-02-15",
+    backendPaused: true,
   },
   {
     id: 6,
@@ -189,6 +200,7 @@ const deploymentsData = [
     image: "/images/webs/realoiaapigallery.png",
     url: "https://real-o-ia-api-gallery.netlify.app/",
     date: "2024-02-03",
+    backendPaused: true,
   },
   {
     id: 7,
@@ -216,6 +228,7 @@ const deploymentsData = [
     image: "/images/webs/galleryapirest.png",
     url: "https://galleryapirest.netlify.app/",
     date: "2024-02-01",
+    backendPaused: true,
   },
 ];
 
@@ -245,6 +258,11 @@ const Deployments = () => {
                 <DeploymentDescription>
                   {deployment.description}
                 </DeploymentDescription>
+                {deployment.backendPaused && (
+                  <WarningMessage>
+                    Base de datos (backend) temporalmente pausada
+                  </WarningMessage>
+                )}
                 <DeploymentFooter>
                   <DeploymentDate>
                     {new Date(deployment.date).toLocaleDateString("es-ES")}
