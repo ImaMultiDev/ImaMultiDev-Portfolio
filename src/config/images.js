@@ -43,11 +43,11 @@ export const imageConfig = {
 
 // Función para obtener la imagen optimizada con fallback
 export const getOptimizedImage = (key) => {
-    const optimized = imageConfig.optimized[key];
     const original = imageConfig.original[key];
 
+    // Por ahora, usar siempre el fallback hasta que tengamos las imágenes optimizadas
     return {
-        src: optimized || original,
+        src: original, // Cambiar a optimized cuando tengamos las imágenes WebP
         fallback: original,
         key
     };

@@ -253,7 +253,7 @@ const Deployments = () => {
               animate={{ opacity: 1, y: 0 }}
             >
               <DeploymentImage
-                src={getOptimizedImage(deployment.imageKey).src}
+                src={getOptimizedImage(deployment.imageKey).fallback}
                 alt={deployment.title}
               />
               <DeploymentContent>

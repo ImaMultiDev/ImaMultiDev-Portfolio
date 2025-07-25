@@ -151,7 +151,7 @@ const Books = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <BookCover
-                  src={getOptimizedImage(book.imageKey).src}
+                  src={getOptimizedImage(book.imageKey).fallback}
                   alt={book.title}
                 />
                 <BookTitle>{book.title}</BookTitle>
