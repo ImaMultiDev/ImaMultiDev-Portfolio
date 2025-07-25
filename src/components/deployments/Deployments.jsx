@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import OptimizedImage from "../shared/OptimizedImage";
-import { getOptimizedImage } from "../../config/images";
 
 const DeploymentsSection = styled.section`
   padding: 20px;
@@ -86,7 +84,7 @@ const DeploymentCard = styled(motion.article)`
   }
 `;
 
-const DeploymentImage = styled(OptimizedImage)`
+const DeploymentImage = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -155,7 +153,7 @@ const deploymentsData = [
     id: 1,
     title: "CVitaPilot",
     description: "Aplicación para gestión de CVitas en desarrollo",
-    imageKey: "cvitapilot",
+    image: "/images/webs/cvitapilotcharacter.png",
     url: "https://www.cvitapilot.com/",
     date: "2025-06-15",
   },
@@ -164,7 +162,7 @@ const deploymentsData = [
     title: "SVGStorm",
     description:
       "SVGStorm es un ecosistema completo para gestionar y consumir iconos SVG de forma profesional.",
-    imageKey: "svgstorm",
+    image: "/images/webs/svgstorm.png",
     url: "https://svgstorm-web-catalog.vercel.app/",
     date: "2025-07-07",
   },
@@ -173,7 +171,7 @@ const deploymentsData = [
     title: "Spin & Sell",
     description:
       "E-Commerce de compras y ventas de diferentes categorias de bicicletas y patinetes electricos",
-    imageKey: "spinandsell",
+    image: "/images/webs/spinandselllogonobg.png",
     url: "https://spinandsell.vercel.app/",
     date: "2025-07-01",
   },
@@ -182,7 +180,7 @@ const deploymentsData = [
     title: "GSAP Motion",
     description:
       "Aprende GSAP Visualmente. La plataforma definitiva para dominar las animaciones web (Aplicación en desarrollo)",
-    imageKey: "gsapmotion",
+    image: "/images/webs/gsap-multidev.png",
     url: "https://gsapmotion.netlify.app/",
     date: "2025-05-11",
   },
@@ -190,7 +188,7 @@ const deploymentsData = [
     id: 5,
     title: "REAL o IA Game",
     description: "Juega ahora a REAL o IA Game",
-    imageKey: "realoia",
+    image: "/images/webs/realoia.png",
     url: "https://realoia.netlify.app/",
     date: "2024-02-15",
   },
@@ -198,7 +196,7 @@ const deploymentsData = [
     id: 6,
     title: "Real o IA API Gallery",
     description: "API REST de galería de imágenes del juego Real o IA",
-    imageKey: "realoiaapi",
+    image: "/images/webs/realoiaapigallery.png",
     url: "https://real-o-ia-api-gallery.netlify.app/",
     date: "2024-02-03",
   },
@@ -207,7 +205,7 @@ const deploymentsData = [
     title: "Multidev Station",
     description:
       "Estación multidesarrollo para la documentación de proyectos, frameworks, herramientas,... (Aplicación en desarrollo)",
-    imageKey: "multidevstation",
+    image: "/images/webs/multidevstation.png",
     url: "https://multidevstation.netlify.app/",
     date: "2025-06-10",
   },
@@ -216,7 +214,7 @@ const deploymentsData = [
     title: "Landing Page Jimny.AI",
     description:
       "Landing Page de Jimny.AI, proyecto finalista del primer concurso de emprendimiento e innovación digital de U-tad",
-    imageKey: "jimny",
+    image: "/images/webs/jimny-lp.png",
     url: "https://jimny.netlify.app/",
     date: "2024-03-05",
   },
@@ -225,7 +223,7 @@ const deploymentsData = [
     title: "Gallery API REST",
     description:
       "Consumir una API REST de galería de imágenes y subir tus imágenes",
-    imageKey: "galleryapi",
+    image: "/images/webs/galleryapirest.png",
     url: "https://galleryapirest.netlify.app/",
     date: "2024-02-01",
     backendPaused: true,
@@ -252,10 +250,7 @@ const Deployments = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <DeploymentImage
-                src={getOptimizedImage(deployment.imageKey).fallback}
-                alt={deployment.title}
-              />
+              <DeploymentImage src={deployment.image} alt={deployment.title} />
               <DeploymentContent>
                 <DeploymentTitle>{deployment.title}</DeploymentTitle>
                 <DeploymentDescription>

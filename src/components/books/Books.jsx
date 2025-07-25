@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import OptimizedImage from "../shared/OptimizedImage";
-import { getOptimizedImage } from "../../config/images";
 
 const BooksSection = styled.section`
   padding: 20px;
@@ -78,7 +76,7 @@ const BookCard = styled.div`
   }
 `;
 
-const BookCover = styled(OptimizedImage)`
+const BookCover = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -100,28 +98,28 @@ const books = [
     id: 1,
     title: "Odoo Development",
     description: "Odoo Development",
-    imageKey: "odoo",
+    coverImage: "/images/books/odoo_development.jpg",
     pdfUrl:
       "https://www.canva.com/design/DAGbdxfpAOU/prBNKme7PmXFBPR4kiyYeQ/edit?utm_content=DAGbdxfpAOU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton", // "https://drive.google.com/file/d/1S7IJeifVpNcg_SSxmTsFliBT4w_OA-8H/preview"
   },
   {
     id: 2,
     title: "SwiftUI Development",
-    imageKey: "swiftui",
+    coverImage: "/images/books/swiftUI_development.png",
     pdfUrl:
       "https://www.canva.com/design/DAGc98_T9nA/bY9lr7PPIRQ5PTy87Ac3zQ/edit?utm_content=DAGc98_T9nA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
   },
   {
     id: 3,
     title: "Android Development",
-    imageKey: "android",
+    coverImage: "/images/books/android_development.png",
     pdfUrl:
       "https://www.canva.com/design/DAGc0NasHXY/vSZheSE2AKU-TvxuhebT8g/edit?utm_content=DAGc0NasHXY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
   },
   {
     id: 4,
     title: "JIMNY.AI Project",
-    imageKey: "jimnyai",
+    coverImage: "/images/books/jimnyai_project.png",
     pdfUrl: "https://jimnyai.my.canva.site/jimny-ai",
   },
   //
@@ -150,10 +148,7 @@ const Books = () => {
                 onClick={() => handleBookClick(book)}
                 whileHover={{ scale: 1.05 }}
               >
-                <BookCover
-                  src={getOptimizedImage(book.imageKey).fallback}
-                  alt={book.title}
-                />
+                <BookCover src={book.coverImage} alt={book.title} />
                 <BookTitle>{book.title}</BookTitle>
               </BookCard>
             ))}
