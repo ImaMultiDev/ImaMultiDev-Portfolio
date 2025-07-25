@@ -1,5 +1,7 @@
-import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import styled from "@emotion/styled";
+import { motion } from "framer-motion";
+import OptimizedImage from "../shared/OptimizedImage";
+import { getOptimizedImage } from "../../config/images";
 
 const BooksSection = styled.section`
   padding: 20px;
@@ -25,30 +27,29 @@ const ContentContainer = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
-  
+
   @media (max-width: 768px) {
     padding: 0.5rem;
   }
-  
+
   &::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   &::-webkit-scrollbar-track {
-    background: ${props => props.theme.colors.background};
+    background: ${(props) => props.theme.colors.background};
   }
-  
+
   &::-webkit-scrollbar-thumb {
-    background: ${props => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors.primary};
     border-radius: 4px;
   }
 `;
 
 const BookshelfContainer = styled.div`
   padding: 1rem;
-  background: ${props => props.theme.colors.card};
+  background: ${(props) => props.theme.colors.card};
   border-radius: 8px;
-
 `;
 
 const BooksGrid = styled.div`
@@ -70,14 +71,14 @@ const BookCard = styled.div`
   gap: 1rem;
   width: clamp(120px, 30vw, 159px);
   height: clamp(170px, 42vw, 225px);
-  
+
   @media (max-width: 480px) {
     width: 159px;
     height: 225px;
   }
 `;
 
-const BookCover = styled.img`
+const BookCover = styled(OptimizedImage)`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -87,7 +88,7 @@ const BookCover = styled.img`
 `;
 
 const BookTitle = styled.h3`
-  color: ${props => props.theme.colors.text.primary};
+  color: ${(props) => props.theme.colors.text.primary};
   margin: 0.5rem 0 0;
   font-size: clamp(0.8rem, 2.5vw, 0.9rem);
   text-align: center;
@@ -99,33 +100,36 @@ const books = [
     id: 1,
     title: "Odoo Development",
     description: "Odoo Development",
-    coverImage: "/images/books/odoo_development.jpg",
-    pdfUrl: "https://www.canva.com/design/DAGbdxfpAOU/prBNKme7PmXFBPR4kiyYeQ/edit?utm_content=DAGbdxfpAOU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" // "https://drive.google.com/file/d/1S7IJeifVpNcg_SSxmTsFliBT4w_OA-8H/preview"
+    imageKey: "odoo",
+    pdfUrl:
+      "https://www.canva.com/design/DAGbdxfpAOU/prBNKme7PmXFBPR4kiyYeQ/edit?utm_content=DAGbdxfpAOU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton", // "https://drive.google.com/file/d/1S7IJeifVpNcg_SSxmTsFliBT4w_OA-8H/preview"
   },
   {
     id: 2,
     title: "SwiftUI Development",
-    coverImage: "/images/books/swiftUI_development.png",
-    pdfUrl: "https://www.canva.com/design/DAGc98_T9nA/bY9lr7PPIRQ5PTy87Ac3zQ/edit?utm_content=DAGc98_T9nA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+    imageKey: "swiftui",
+    pdfUrl:
+      "https://www.canva.com/design/DAGc98_T9nA/bY9lr7PPIRQ5PTy87Ac3zQ/edit?utm_content=DAGc98_T9nA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
   },
   {
     id: 3,
     title: "Android Development",
-    coverImage: "/images/books/android_development.png",
-    pdfUrl: "https://www.canva.com/design/DAGc0NasHXY/vSZheSE2AKU-TvxuhebT8g/edit?utm_content=DAGc0NasHXY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+    imageKey: "android",
+    pdfUrl:
+      "https://www.canva.com/design/DAGc0NasHXY/vSZheSE2AKU-TvxuhebT8g/edit?utm_content=DAGc0NasHXY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
   },
   {
     id: 4,
     title: "JIMNY.AI Project",
-    coverImage: "/images/books/jimnyai_project.png",
-    pdfUrl: "https://jimnyai.my.canva.site/jimny-ai"
-  }
+    imageKey: "jimnyai",
+    pdfUrl: "https://jimnyai.my.canva.site/jimny-ai",
+  },
   //
 ];
 
 const Books = () => {
   const handleBookClick = (book) => {
-    window.open(book.pdfUrl, '_blank');
+    window.open(book.pdfUrl, "_blank");
   };
 
   return (
@@ -146,8 +150,8 @@ const Books = () => {
                 onClick={() => handleBookClick(book)}
                 whileHover={{ scale: 1.05 }}
               >
-                <BookCover 
-                  src={book.coverImage} 
+                <BookCover
+                  src={getOptimizedImage(book.imageKey).src}
                   alt={book.title}
                 />
                 <BookTitle>{book.title}</BookTitle>
@@ -160,4 +164,4 @@ const Books = () => {
   );
 };
 
-export default Books; 
+export default Books;

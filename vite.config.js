@@ -17,6 +17,11 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     sourcemap: false,
     minify: 'esbuild',
-    target: 'esnext'
+    target: 'esnext',
+    assetsInlineLimit: 4096, // Inline assets menores a 4KB
+  },
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.webp'],
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion']
   }
 })
